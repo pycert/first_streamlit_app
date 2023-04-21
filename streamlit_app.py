@@ -25,3 +25,5 @@ st.header("Fruityvice Fruit Advice!")
 
 fruityvice_response = requests.get("https://fruityvice.com/api/fruit/watermelon")
 st.text(fruityvice_response.json())
+fruityvice_normalized = pandas.json_normalize(fruityvice_response.json())
+st.dataframe(fruityvice_normalized)
